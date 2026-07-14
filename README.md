@@ -1,9 +1,50 @@
 # LLM Security Gateway
 
-A FastAPI gateway that evaluates prompts and model responses through a modular, policy-driven security pipeline before returning output to clients.
+An enterprise-ready API gateway that sits between users and Large Language Models (LLMs) to enforce security, governance, and policy decisions before prompts reach the model.
+
+Built with FastAPI, Docker, and a modular plugin architecture, the gateway performs prompt inspection, policy evaluation, RBAC-aware access control, response redaction, and OWASP LLM Top 10 mapping while remaining provider-agnostic.
 
 ## Architecture
 
+```
+                    Client
+                       │
+                       ▼
+              FastAPI Gateway API
+                       │
+             Request Validation
+                       │
+                       ▼
+        ┌──────────────────────────┐
+        │     Scanner Registry     │
+        └──────────────────────────┘
+           │      │       │      │
+           ▼      ▼       ▼      ▼
+      Secrets   PII   Prompt   URL Scanner
+      Scanner  Scanner Injection
+                       │
+                       ▼
+               Risk Engine
+                       │
+                       ▼
+             Policy Engine (RBAC)
+                       │
+         ┌─────────────┴─────────────┐
+         │                           │
+      BLOCK                        ALLOW
+         │                           │
+         ▼                           ▼
+   Audit Logger               LLM Provider
+                                  │
+                                  ▼
+                           Response Redaction
+                                  │
+                                  ▼
+                             Audit Logger
+                                  │
+                                  ▼
+                             API Response
+```
 ```text
 API Layer
   -> Request Validation
