@@ -31,10 +31,7 @@ class PolicyEngine:
         action = self._apply_context(base_action, request)
         role = getattr(request, "role", "unknown")
         reason = (
-            f"risk={risk.level}; "
-            f"score={risk.score}; "
-            f"base={base_action}; "
-            f"role={role}"
+            f"risk={risk.level}; " f"score={risk.score}; " f"base={base_action}; " f"role={role}"
         )
         return PolicyDecision(action=action, reason=reason)
 

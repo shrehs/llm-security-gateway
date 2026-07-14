@@ -16,8 +16,7 @@ class MetricsCollector:
 
     def record_scanner(self, scanner: str, elapsed_ms: float, detections: int) -> None:
         self.scanner_execution_time_ms[scanner] = (
-            self.scanner_execution_time_ms.get(scanner, 0.0)
-            + elapsed_ms
+            self.scanner_execution_time_ms.get(scanner, 0.0) + elapsed_ms
         )
         self.detections_by_scanner[scanner] += detections
 

@@ -34,9 +34,7 @@ class ScannerRegistry:
     def _enabled_from_config(self) -> list[str]:
         if not settings.policy_file.exists():
             return list(self.available.keys())
-        config = yaml.safe_load(
-            settings.policy_file.read_text(encoding="utf-8")
-        ) or {}
+        config = yaml.safe_load(settings.policy_file.read_text(encoding="utf-8")) or {}
 
         enabled = config.get(
             "scanners",
