@@ -1,0 +1,48 @@
+scanners:
+  enabled:
+    - secret
+    - pii
+    - injection
+    - url
+    - malware_url
+
+policies:
+  PII:
+    HIGH: BLOCK
+    MEDIUM: REDACT
+    LOW: WARN
+  SECRET:
+    HIGH: BLOCK
+    MEDIUM: BLOCK
+    LOW: WARN
+  PROMPT_INJECTION:
+    HIGH: BLOCK
+    MEDIUM: WARN
+    LOW: WARN
+  URL:
+    HIGH: BLOCK
+    MEDIUM: WARN
+    LOW: WARN
+
+role_overrides:
+  admin:
+    BLOCK: WARN
+    REDACT: WARN
+  security_analyst:
+    BLOCK: REDACT
+  employee: {}
+
+clearance_overrides:
+  restricted:
+    WARN: BLOCK
+    REDACT: BLOCK
+  confidential:
+    WARN: REDACT
+
+thresholds:
+  warn: 30
+  redact: 60
+  block: 80
+
+providers:
+  active: mock
