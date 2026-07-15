@@ -79,8 +79,8 @@ API Layer
 - Mock streaming endpoint for server-sent event inspection
 - Response redaction for sensitive model output
 
-![Docker](images\Docker.png)
-![GitHubActions](images\GitHubActions.png)
+![Docker](images/Docker.png)
+![GitHubActions](images/GitHubActions.png)
 
 ## Current Scanners
 
@@ -123,7 +123,7 @@ thresholds:
 ```
 
 ## Endpoints
-![Endpoints](images\Swagger.png)
+![Endpoints](images/Swagger.png)
 
 ### GET /health
 
