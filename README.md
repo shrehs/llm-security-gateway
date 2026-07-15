@@ -80,7 +80,7 @@ API Layer
 - Response redaction for sensitive model output
 
 ![Docker](images\Docker.png)
-![Docker](images\GitHubActions.png)
+![GitHubActions](images\GitHubActions.png)
 
 ## Current Scanners
 
