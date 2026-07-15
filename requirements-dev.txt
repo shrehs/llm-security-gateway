@@ -2,7 +2,8 @@
 
 pytest
 pytest-cov
-mypy
-ruff
+pytest-asyncio
 black
+ruff
+mypy
 pre-commit
