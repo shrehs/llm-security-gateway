@@ -123,7 +123,7 @@ thresholds:
 ```
 
 ## Endpoints
-![Endpoints](.\images\Swagger.png)
+![Endpoints](images\Swagger.png)
 
 ### GET /health
 
