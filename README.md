@@ -1,5 +1,11 @@
 # LLM Security Gateway
 
+![Build Status](https://github.com/shrehs/llm-security-gateway/actions/workflows/ci.yml/badge.svg)
+![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)
+![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)
+![Docker](https://img.shields.io/badge/docker-ready-2496ED?logo=docker&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?logo=fastapi)
+
 An enterprise-ready API gateway that sits between users and Large Language Models (LLMs) to enforce security, governance, and policy decisions before prompts reach the model.
 
 Built with FastAPI, Docker, and a modular plugin architecture, the gateway performs prompt inspection, policy evaluation, RBAC-aware access control, response redaction, and OWASP LLM Top 10 mapping while remaining provider-agnostic.
